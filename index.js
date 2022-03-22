@@ -2,6 +2,13 @@ const Discord = require("discord.js");
 const { Intents } = require("discord.js");
 const dotenv = require("dotenv");
 
+const date = new Date()
+
+const hours = date.getHours();
+const msgNight = 'Boa noite! '
+const msgMorning = 'Bom dia! '
+const msgAft = 'Boa tarde! '
+
 dotenv.config();
 
 const client = new Discord.Client({
@@ -26,9 +33,23 @@ client.on("messageCreate", (msg) => {
     });
   }
 
-  if (msg.content === prefix + "Bom dia") {
+  const speakHours = () => {
+  if(hours == 18 || hours < 24) {
+
+    msgNight
+  } else if( hours == 24 || hours < 12) {
+
+    msgMorning
+  } else if(hours == 12 || hours < 18) {
+
+    msgAft
+  }
+  }
+
+  
+  if (msg.content === prefix + `${speakHours()}`) {
     msg.reply({
-      content: "Bom dia, " + msg.author.username,
+      content: `${speakHours()}` + msg.author.username,
     });
   }
 });
