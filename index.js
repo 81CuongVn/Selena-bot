@@ -7,6 +7,10 @@ dotenv.config();
 const client = new Discord.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
+const listCommands = `Membros superiores:\n
+Teófilo Nogueira,\n
+Bot Selena,\n`
+
 
 const prefix = "+";
 
@@ -31,4 +35,10 @@ client.on("messageCreate", (msg) => {
       content: "Bom dia, " + msg.author.username,
     });
   }
+
+  if(msg.content === prefix + "secretList") {
+    msg.reply({
+      content: `${listCommands}`,
+    });   
+  }//
 });
