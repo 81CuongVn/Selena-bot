@@ -26,7 +26,7 @@ client.on("messageCreate", (msg) => {
     });
   }
 
-  if (msg.content === prefix + "Bom dia" || msg.content === "Bom dia") {
+  if (msg.content === prefix + "Bom dia") {
     msg.reply({
       content: "Bom dia, " + msg.author.username,
     });
