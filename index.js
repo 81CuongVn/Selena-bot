@@ -1,10 +1,32 @@
 const Discord = require("discord.js");
 const { Intents } = require("discord.js");
 const dotenv = require("dotenv");
-const chatBot = require('./chatbot.js');
 
-// https://discord.js.org/#/docs/discord.js/stable/general/welcome
+const {method, methodTwo, m_3, admins} = require('./chatbot.js');
+
 //
+
+//BOT ON
+
+const express = require('express');
+
+const app = express();
+
+app.get('/', (request, response) => {
+
+const ping = new Date();
+
+ping.setHours(ping.getHours() -3);
+
+console.log(`Ping recebido às ${ping.getUTCHours()}):${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`);
+
+response.sendStatus(200)
+
+})
+
+app.listen(process.env.PORT)
+
+///////////////////////////////////////////
 
 dotenv.config();
 
@@ -12,10 +34,7 @@ const client = new Discord.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
 
-const listCommands = `Membros superiores:\n
-Teófilo Nogueira,\n
-Bot Selena.\n
-Para mais detalhes entre em contato com : cyberstileid397@gmail.com`
+
 
 //PREFIX
 const pre = "!";
@@ -43,16 +62,27 @@ client.on("messageCreate", (msg) => {
     });
   }
 
-  if(msg.content === `${pre}secretList` ) {
+  if (msg.content === `${pre}secretList`) {
     msg.reply({
-      content: `${listCommands}`,
-    });   
+      content: `${m_3}`,
+    });
   }//
 
-    if(msg.content === `${pre}adminList`) {
+  if (msg.content === `${pre}adminList`) {
     msg.reply({
-      content: `${chatBot}`,
-    });   
+      content: `${method}`,
+    });
   }
+  if (msg.content === `${pre}SECRETPASSWORD`) {
+    msg.reply({
+      content: `${methodTwo}`,
+    });
+  }
+  if (msg.content === `${pre}admins`) {
+    msg.reply({
+      content: `${admins}`,
+    });
+  }
+
 
 });
