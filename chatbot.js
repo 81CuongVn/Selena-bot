@@ -8,8 +8,16 @@ name: 'Teonogueira',
 },
  {                  
   name: `Rick`,
-  Idade: 35,
+  Idade: 23,
   Person: 'Kagura',
+  Clan: 'WindGarden',
+  Rank: 'Mythic',
+
+},
+ {                  
+  name: `Biel`,
+  Idade: 22,
+  Person: 'Roger',
   Clan: 'WindGarden',
   Rank: 'Mythic',
 

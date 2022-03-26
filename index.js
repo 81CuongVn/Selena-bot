@@ -1,10 +1,9 @@
 const Discord = require("discord.js");
 const { Intents } = require("discord.js");
 const dotenv = require("dotenv");
-
 const {method, methodTwo, m_3, admins} = require('./chatbot.js');
 
-const {tutor, hour } = require('./time.js')
+const {tutor, hour, site } = require('./time.js')
 
 //
 
@@ -35,8 +34,6 @@ dotenv.config();
 const client = new Discord.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
-
-
 
 //PREFIX
 const pre = "!";
@@ -94,6 +91,11 @@ client.on("messageCreate", (msg) => {
   if (msg.content === `${pre}tutorialDiscord`) {
     msg.reply({
       content: `${tutor}`,
+    });
+  }
+  if (msg.content === `${pre}website`) {
+    msg.reply({
+      content: `${site}`,
     });
   }
 
