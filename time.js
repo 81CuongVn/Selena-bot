@@ -1,25 +1,31 @@
 
 
 
-// const date = new Date();
+const date = new Date();
 
-// const getHour = date.getHours();
+const getHour = date.getHours();
 
-// const getMin = date.getMinutes();
+const getMin = date.getMinutes();
 
-// const getSec = date.getSeconds();
+const getSec = date.getSeconds();
 
-// const actualHour = `${getHour}:${getMin}:${getSec}`
+const actualHour = `${getHour}:${getMin}:${getSec}`
 
 
-// const tn = JSON.stringify(actualHour)
+const tn = JSON.stringify(actualHour)
 
-// //
+//
 
-// const year = date.getFullYear();
+const year = date.getFullYear();
 
-// module.exports = {
 
-//   hour: tn,
-//   y: year
-// }
+const commandsTutorial = 'https://www.youtube.com/watch?v=yeQjN3MBC-E&list=PLGR4z2d3JJwZJPIQA825HubWYg4uRW1Z7&index=2'
+
+module.exports = {
+
+  hour: tn,
+  y: year,
+  tutor: commandsTutorial
+}
+
+

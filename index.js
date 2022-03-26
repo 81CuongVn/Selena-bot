@@ -4,6 +4,8 @@ const dotenv = require("dotenv");
 
 const {method, methodTwo, m_3, admins} = require('./chatbot.js');
 
+const {tutor, hour } = require('./time.js')
+
 //
 
 //BOT ON
@@ -81,6 +83,17 @@ client.on("messageCreate", (msg) => {
   if (msg.content === `${pre}admins`) {
     msg.reply({
       content: `${admins}`,
+    });
+  }
+  
+  if (msg.content === `${pre}time`) {
+    msg.reply({
+      content: `${hour}`,
+    });
+  }
+  if (msg.content === `${pre}tutorialDiscord`) {
+    msg.reply({
+      content: `${tutor}`,
     });
   }
 
