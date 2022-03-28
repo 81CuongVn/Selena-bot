@@ -28,7 +28,6 @@ const filterAdmins = otherList.filter(item => item.name).reduce((acc, {name}) =>
 
 const admins = JSON.stringify(filterAdmins)
 
-
 const bits = `121200924hash`
 
 const pClan = [

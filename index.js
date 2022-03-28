@@ -3,8 +3,9 @@ const { Intents } = require("discord.js");
 const dotenv = require("dotenv");
 const {method, methodTwo, m_3, admins} = require('./chatbot.js');
 
-const {tutor, hour, site } = require('./time.js')
-
+const { hour } = require('./time.js')
+const {help} = require('./help.js')
+const {tutor, site, initReact} = require('./sites.js')
 //
 
 //BOT ON
@@ -39,6 +40,7 @@ const client = new Discord.Client({
 const pre = "!";
 //////
 
+
 client.login(process.env.TOKEN);
 
 client.on("ready", () => {
@@ -49,54 +51,66 @@ client.on("messageCreate", (msg) => {
   if (!msg.guild) return;
   if (!msg.content.startsWith(pre)) return;
 
-  if (msg.content === `${pre}Hello`) {
+    if (msg.content === `${pre}help`) {
     msg.reply({
-      content: "Is Okay!!",
+      content: `${help}`,
     });
   }
 
-  if (msg.content === `${pre}Bom dia`) {
-    msg.reply({
-      content: "Bom dia, " + msg.author.username,
-    });
+  ////////////////////////////
+
+///AUTOMATIZE (by: TeoNogueira)
+  
+  function rc(b) {
+
+    const mrc = msg.reply({
+      content: `${b}`
+    })
+
+    return mrc
   }
 
-  if (msg.content === `${pre}secretList`) {
-    msg.reply({
-      content: `${m_3}`,
-    });
+  let mc = msg.content
+
+///////
+ ////////////////////////////
+
+  
+  if (mc === `${pre}Hello`) {
+  rc('Okay!')
+  }
+
+  if (mc === `${pre}Bom dia`) {
+   rc('Bom dia,' + msg.author.username,)
+    
+  }
+
+  if (mc === `${pre}secretList`) {
+  rc(`${m_3}`)
   }//
 
-  if (msg.content === `${pre}adminList`) {
-    msg.reply({
-      content: `${method}`,
-    });
+  if (mc === `${pre}adminList`) {
+  rc(`${method}`)
   }
-  if (msg.content === `${pre}SECRETPASSWORD`) {
-    msg.reply({
-      content: `${methodTwo}`,
-    });
+  if (mc === `${pre}SECRETPASSWORD`) {
+  rc(`${methodTwo}`)
   }
-  if (msg.content === `${pre}admins`) {
-    msg.reply({
-      content: `${admins}`,
-    });
+  if (mc === `${pre}admins`) {
+  rc(`${admins}`)
   }
   
-  if (msg.content === `${pre}time`) {
-    msg.reply({
-      content: `${hour}`,
-    });
+  if (mc === `${pre}time`) {
+   rc(`${hour}`)
   }
-  if (msg.content === `${pre}tutorialDiscord`) {
-    msg.reply({
-      content: `${tutor}`,
-    });
+  if (mc === `${pre}tutorialDiscord`) {
+  rc(`${tutor}`)
   }
-  if (msg.content === `${pre}website`) {
-    msg.reply({
-      content: `${site}`,
-    });
+  if (mc === `${pre}website`) {
+  rc(`${site}`)
+  }
+  
+  if (mc === `${pre}tutorialReact`) {
+   rc(`${initReact}`)
   }
 
 
