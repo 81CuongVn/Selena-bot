@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const { Intents } = require("discord.js");
 const dotenv = require("dotenv");
 
+const {cm} = require('../help/na_help.js');
+
 //
 
 ///////////////////////////////////////////
@@ -42,16 +44,23 @@ cli.on("messageCreate", (msg) => {
   }
 
   let mc = msg.content
-  
-///////
+
  ////////////////////////////
+
+      if (mc === `${pre}&&nativeHelp`) {
+  rc( `Comandos especiais: ${cm}`)
+  }
       if (mc === `${pre}myData`) {
   rc( `Sua tag é: ${msg.author.tag}`)
   }
       if (mc === `${pre}membros`) {
   rc( `Total de membros: ${msg.guild.memberCount}`)
   }
+      if (mc === `${pre}&&botOff`) {
+  rc( `Proposital: ${error}`)
+  }
 
+  
 
 });
 

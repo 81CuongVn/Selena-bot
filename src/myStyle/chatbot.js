@@ -42,7 +42,7 @@ const listCommands = 'Membros superiores: Teófilo Nogueira, Bot Selena. Para ma
 const list = JSON.stringify(otherList)
   const listTwo = JSON.stringify(pClan)
 
-const list_3 = JSON.stringify(listCommands)
+const list_3 = listCommands
 // exports.method = list
 // exports.methodTwo = listTwo
 

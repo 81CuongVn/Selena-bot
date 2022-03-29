@@ -78,12 +78,7 @@ client.on("messageCreate", (msg) => {
       if (mc === `${pre}help`) {
   rc(`${help}`)
   }
-      if (mc === `${pre}myData`) {
-  rc( `Sua tag é: ${msg.author.tag}`)
-  }
-  //     if (mc === `${pre}membros`) {
-  // rc( `Total de membros: ${msg.guild.memberCount}`)
-  // }
+ 
   
   if (mc === `${pre}Hello`) {
   rc('Okay!')
