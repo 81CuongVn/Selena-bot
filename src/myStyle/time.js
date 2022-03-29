@@ -10,13 +10,8 @@ const actualHour = `${getHour}:${getMin}:${getSec}`
 
 
 const tn = JSON.stringify(actualHour)
-
 //
-
 const year = date.getFullYear();
-
-
-
 
 module.exports = {
 

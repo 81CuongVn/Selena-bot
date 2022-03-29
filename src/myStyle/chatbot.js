@@ -47,11 +47,12 @@ const list_3 = JSON.stringify(listCommands)
 // exports.methodTwo = listTwo
 
 module.exports = {
+  
   method: list,
   methodTwo: listTwo,
   m_3: list_3,
   admins: admins
-  
+
 }
 
 

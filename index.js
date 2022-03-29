@@ -1,14 +1,17 @@
 const Discord = require("discord.js");
 const { Intents } = require("discord.js");
+
 const dotenv = require("dotenv");
-const {method, methodTwo, m_3, admins} = require('./chatbot.js');
+const {method, methodTwo, m_3, admins} = require('./src/myStyle/chatbot.js');
 
-const { hour } = require('./time.js')
-const {help} = require('./help.js')
-const {tutor, site, initReact} = require('./sites.js')
+const { hour } = require('./src/myStyle/time.js')
+const {help} = require('./src/help/help.js')
+const {tutor, site, initReact} = require('./src/myStyle/sites.js')
 
-const {imgAnime} = require('./fetch.js')
+const {imgAnime} = require('./src/myStyle/fetch.js');
 //
+
+const {cli } = require('./src/native/native.js')
 
 //BOT ON
 
@@ -36,6 +39,7 @@ dotenv.config();
 
 const client = new Discord.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+  
 });
 
 //PREFIX
@@ -52,7 +56,7 @@ client.on("ready", () => {
 client.on("messageCreate", (msg) => {
   if (!msg.guild) return;
   if (!msg.content.startsWith(pre)) return;
-
+ 
   ////////////////////////////
 
 ///AUTOMATIZE (by: TeoNogueira)
@@ -74,6 +78,12 @@ client.on("messageCreate", (msg) => {
       if (mc === `${pre}help`) {
   rc(`${help}`)
   }
+      if (mc === `${pre}myData`) {
+  rc( `Sua tag é: ${msg.author.tag}`)
+  }
+  //     if (mc === `${pre}membros`) {
+  // rc( `Total de membros: ${msg.guild.memberCount}`)
+  // }
   
   if (mc === `${pre}Hello`) {
   rc('Okay!')
@@ -115,4 +125,5 @@ client.on("messageCreate", (msg) => {
    rc(`${imgAnime}\n ${hour}`)
   }
 
+  cli
 });
