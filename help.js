@@ -12,6 +12,7 @@ const helpList = [
 'tutorialDiscord',
 'website',
   'tutorialReact',
+  'selena'
 ]
 
 

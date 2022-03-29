@@ -6,6 +6,8 @@ const {method, methodTwo, m_3, admins} = require('./chatbot.js');
 const { hour } = require('./time.js')
 const {help} = require('./help.js')
 const {tutor, site, initReact} = require('./sites.js')
+
+const {imgAnime} = require('./fetch.js')
 //
 
 //BOT ON
@@ -51,12 +53,6 @@ client.on("messageCreate", (msg) => {
   if (!msg.guild) return;
   if (!msg.content.startsWith(pre)) return;
 
-    if (msg.content === `${pre}help`) {
-    msg.reply({
-      content: `${help}`,
-    });
-  }
-
   ////////////////////////////
 
 ///AUTOMATIZE (by: TeoNogueira)
@@ -71,10 +67,13 @@ client.on("messageCreate", (msg) => {
   }
 
   let mc = msg.content
-
+  
 ///////
  ////////////////////////////
 
+      if (mc === `${pre}help`) {
+  rc(`${help}`)
+  }
   
   if (mc === `${pre}Hello`) {
   rc('Okay!')
@@ -112,6 +111,8 @@ client.on("messageCreate", (msg) => {
   if (mc === `${pre}tutorialReact`) {
    rc(`${initReact}`)
   }
-
+  if (mc === `${pre}selena`) {
+   rc(`${imgAnime}\n ${hour}`)
+  }
 
 });
